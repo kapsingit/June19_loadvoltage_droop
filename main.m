@@ -61,14 +61,15 @@ Pth = 2000;
 capacity = 8400;
 m = participation*capacity/(vth - vcri);
 n = (participation*m*(vth-vcri))/((1-participation)*(capacity-Pth));
-[x,y] = meshgrid([1.042:0.001:1.058],[2000:500:8000]);
+[x,y] = meshgrid([1.042:0.001:1.058],[2000:400:8400]);
 z = m*(x*240-vcri)+n*(y-Pth);
-[x1,y1] = meshgrid([1.042:0.001:1.058],[0:500:2000]);
+[x1,y1] = meshgrid([1.042:0.001:1.058],[0:400:2000]);
 z1 = m*(x1*240-vcri);
 figure('color',[1,1,1]);
 surf(x,y,z)
 hold
 surf(x1,y1,z1)
+ylim([0,8400])
 xlabel('Voltage (p.u.)');
 ylabel('Net available power (W)');
 zlabel('Curtailment (W)');

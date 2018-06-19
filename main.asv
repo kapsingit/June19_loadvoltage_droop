@@ -72,4 +72,4 @@ surf(x1,y1,z1)
 xlabel('Voltage (p.u.)');
 ylabel('Net available power (W)');
 zlabel('Curtailment (W)');
-print(gcf,'Images\feasibleregion','-dpng','-r600');
+print(gcf,'Images\voltage1042','-dpng','-r600');
